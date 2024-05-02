@@ -28,6 +28,14 @@
 .pt1 {
   padding-top: 200px;
 }
+
+body {
+  background-image: url(img/landingbg.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover ;
+}
+
 .navbar {
   background-color: rgba(233, 233, 255, 0.5);
   height: 80px;
@@ -182,7 +190,7 @@ a {
 }
 
 .bottom-container {
-  background-image: url(img/hal14.svg);
+  background-image: url(img/bottom2.svg);
   background-repeat: no-repeat;
   height: 350px;
   margin: 20px;
