@@ -18,25 +18,20 @@
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 1rem;
-
 }
 
-.pdmax {
+.pbm {
   padding-bottom: 100px;
 }
 
 .pt1 {
+  padding-top: 100px;
+}
+
+.pt2 {
   padding-top: 200px;
 }
 
-/*
-body {
-  background-image: url(img/landingbg.svg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover ;
-}
-*/
 
 .navbar {
   background-color: rgba(255, 255, 255, 0);
@@ -200,5 +195,4 @@ a {
   height: 350px;
   margin: 20px;
   border-radius: 20px;
-
 }
