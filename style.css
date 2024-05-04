@@ -4,11 +4,13 @@
   --primary-color: #92C7CF;
   --primary-color-light: #fffcfa;
   --primary-color-dark: #3B84A3;
+  --text-black: #050505;
   --text-dark: #453737;
-  --text-light: #7D7D7D;
+  --text-medium: #8f8f8f;
+  --text-light: #f3f3f3;
   --white: #ffffff;
   --primary-button: #3B84A3;
-  --primary-button-hover: #B8EFF4;
+  --primary-button-hover: #69B1C7;
   --max-width: 1200px;
   
 }
@@ -21,6 +23,10 @@
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+}
+
+.desc {
+  color: var(--text-dark);
 }
 
 .pbm {
@@ -53,16 +59,16 @@
 
 .login-button {
   background-color: var(--primary-button);
-  color: var(--text-dark);
-  font-size: 14px;
-  padding: 8px 20px;
+  color: var(--text-light);
+  font-size: 18px;
+  padding: 8px 25px;
   border-radius: 50px;
   text-decoration: none;
   transition: 0.3s background-color;
 }
 
 .login-button:hover {
-  background-color: rgb(189, 202, 223);
+  background-color: var(--primary-button-hover);
 }
 
 .navbar-toggler {
@@ -85,7 +91,7 @@
 .nav-link:hover,
 .nav-link:focus,
 .nav-link.active {
-  color: var(--text-light) !important;
+  color: var(--text-medium) !important;
 }
 
 @media (min-width: 992px) {
@@ -114,10 +120,6 @@
   padding: 100px 0 0 0;
 }
 
-.hero-hed {
-  color: #fff5ee;
-}
-
 .section__container {
   max-width: var(--max-width);
   margin: auto;
@@ -134,7 +136,7 @@
   font-size: 2rem;
   font-weight: 700;
   line-height: 3rem;
-  color: var(--text-dark);
+  color: var(--text-black);
   text-align: center;
   font-family: serif;
 }
@@ -152,7 +154,7 @@
   white-space: nowrap;
   font-size: 1rem;
   color: var(--white);
-  background-color: var(--primary-color);
+  background-color: var(--primary-button);
   border-radius: 10px;
   transition: 0.3s;
   cursor: pointer;
@@ -160,7 +162,7 @@
 }
 
 .btn:hover {
-  background-color: var(--primary-color-dark);
+  background-color: var(--primary-button-hover);
 }
 
 img {
@@ -197,4 +199,14 @@ a {
   height: 350px;
   margin: 20px;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    padding: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
 }
