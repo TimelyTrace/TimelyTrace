@@ -11,24 +11,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <input type="checkbox" id="flip">
         <div class="cover">
             <div class="front">
-                <img src="img/clock.png"alt="">
+                <img src="img/clock.png"
+                    style="border-radius: 20px; box-shadow: -5px 0px 5px rgba(31, 38, 135, 0.37), 5px 0px 5px rgba(31, 38, 135, 0.20);">
                 <div class="text">
-                    <b class="text-1 poppins">Mencatat kehadiran siswa yang <br>
+                    <b class="text-1 poppins top-0 p-5">Mencatat kehadiran siswa yang <br>
                         terlambat menjadi lebih mudah dengan LateTrack. </b>
                 </div>
             </div>
         </div>
         <div class="forms">
-            <div class="form-content row">
-                <div class="lg-form col-md-6 col-lg-6">
-                    <div class="title">Login</div>
-                    <h3 class="hello">Selamat datang kembali!</h3>
-                    <p class="desc">Silakan masuk untuk mengakses akun Anda.</p>
+            <div class="form-content row justify-content-around">
+                <div class="lg-form col-md-5 col-lg-5">
+                    <div class="logo top-0 d-flex pt-3 mb-5">
+                        <img class="logo-img" src="img/logo.svg" style="height: 40px;">
+                        <h2 class="logo-title pt-1"
+                            style="font-family: 'Noto Serif', serif; font-size: 24px; margin-left: 10px;">TimelyTrace
+                        </h2>
+                    </div>
+                    <div class="upper-text">
+                    <h3 class="title pt-1 mb-0" >Selamat datang kembali!</h3>
+                    <p class="desc pb-2"style="font-family: 'Noto Serif', serif;">Silakan masuk untuk mengakses akun Anda.</p></div>
                     <form action="#">
                         <div class="input-boxs">
                             <div class="wave-group">
@@ -53,21 +61,27 @@
                                     <span class="label-char" style="--index: 4">w</span>
                                     <span class="label-char" style="--index: 5">o</span>
                                     <span class="label-char" style="--index: 6">r</span>
-                                    <span class="label-char" style="--index: 7">d</span>
+                                    <span class="label-char" style="--index: 7">d</span></label>
                             </div>
-                            <div class="text"><a href="#">Forgot password?</a></div>
-                            <div class="btn input-box">
-                                <input type="submit" onclick="window.location.href='landingpage.php'" value="Login">
+                            <div class="btn input-box d-block pt-4">
+                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Login">
                             </div>
-                            <div class="text reg-txt">Belum punya akun? <label class="llabel" for="flip">Daftar
+                            <div class="text reg-txt" style="text-align: center">Belum punya akun? <label
+                                    style="color: #03A5CA; text-decoration: underline;" for="flip">Daftar
                                     disini!</label></div>
                         </div>
                     </form>
                 </div>
-                <div class="reg-form col-lg-6 col-md-6">
-                    <div class="title">Register</div>
-                    <h3 class="hello"> Selamat datang!</h3>
-                    <p class="desc">Silakan daftar untuk membuat akun baru.</p>
+                <div class="reg-form col-lg-5 col-md-5">
+                    <div class="logo top-0 d-flex pt-3 mb-5">
+                        <img class="logo-img" src="img/logo.svg" style="height: 40px;">
+                        <h2 class="logo-title pt-1"
+                            style="font-family: 'Noto Serif', serif; font-size: 24px; margin-left: 10px;">TimelyTrace
+                        </h2>
+                    </div>
+                    <div class="upper-text">
+                    <h3 class="title pt-1 mb-0"> Selamat datang!</h3>
+                    <p class="desc pb-2" style="font-family: 'Noto Serif', serif;">Silakan daftar untuk membuat akun baru.</p></div>
                     <form action="#">
                         <div class="input-boxs">
                             <div class="wave-group">
@@ -109,17 +123,23 @@
                                     <span class="label-char" style="--index: 7">d</span>
                                 </label>
                             </div>
-                            <div class="btn input-box">
-                                <input type="submit" onclick="window.location.href='landingpage.php'" value="Register">
+                            <div class="btn input-box d-block">
+                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Register">
                             </div>
-                            <div class="text reg-txt">Sudah punya akun? <label class="llabel" for="flip">Login
-                                    Sekarang</label></div>
+                            <div class="text reg-txt" style="text-align: center">Sudah punya akun? <label
+                                    style="color: #03A5CA; text-decoration: underline;" for="flip">Register</label>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function toggleZoomScreen() {
+            document.body.style.zoom = "80%";
+        } 
+    </script>
 </body>
 
 </html>
