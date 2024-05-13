@@ -124,7 +124,7 @@
                                 </label>
                             </div>
                             <div class="btn input-box d-block">
-                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Register">
+                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Register" name="kirim">
                             </div>
                             <div class="text reg-txt" style="text-align: center">Sudah punya akun? <label
                                     style="color: #03A5CA; text-decoration: underline;" for="flip">Login</label>
