@@ -82,7 +82,7 @@
                     <div class="upper-text">
                     <h3 class="title pt-1 mb-0"> Selamat datang!</h3>
                     <p class="desc pb-2" style="font-family: 'Noto Serif', serif;">Silakan daftar untuk membuat akun baru.</p></div>
-                    <form action="#">
+                    <form action="proses_register.php" method="post">
                         <div class="input-boxs">
                             <div class="wave-group">
                                 <input required="" type="text" class="inpute" name="username">
