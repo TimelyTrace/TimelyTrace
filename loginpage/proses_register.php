@@ -6,12 +6,21 @@
     $kirim=$_POST['kirim'];
 
 //proses kirim data ke database mysql
-if($kirim){
+if(isset($_POST['kirim'])){
+    // Pastikan variabel POST tersedia sebelum mengaksesnya
+    $username = isset($_POST['username']) ? $_POST['username'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+
+    // Proses kirim data ke database mysql
     $query="INSERT INTO `tb_user`(`id_user`, `username`, `email`, `password`) VALUES ('','$username','$email','$password')";
     $hasil=mysqli_query($conn,$query);
-    echo "Registrasi user berhasil<br>";
-    echo "<a href='login.php'>Login User</a>";
-} else {
-    echo "Registrasi User Gagal!";
+    if($hasil){
+        // Registrasi berhasil, lakukan redirect
+        header("Location: landingpage.php");
+        exit();
+    } else {
+        echo "Registrasi User Gagal!";
+    }
 }
 ?>
