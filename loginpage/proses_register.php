@@ -16,7 +16,7 @@
         $query="INSERT INTO `tb_user`(`id_user`, `username`, `email`, `password`, `level`) VALUES (NULL,'$username','$email','$password','$level')";
         $hasil=mysqli_query($conn,$query);
         echo "Registrasi User Berhasil<br>";
-        echo "<a href='login.php'>Login User</a>";
+        echo "<a href='loginpage.php'>Login User</a>";
     } else {
         echo "Registrasi User Gagal!";
     }
