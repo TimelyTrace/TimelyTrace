@@ -140,6 +140,61 @@
             document.body.style.zoom = "80%";
         } 
     </script>
+    <?php
+session_start();
+
+// Database connection
+$host = 'localhost'; // Your database host
+$user = 'username'; // Your database username
+$pass = 'password'; // Your database password
+$database = 'db_timelytrace'; // Your database name
+
+$conn = mysqli_connect($host, $user, $pass, $name);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Login
+if(isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        $_SESSION['email'] = $email;
+        header('Location: dashboard.php'); // Redirect to dashboard or wherever you want
+        exit();
+    } else {
+        echo "Invalid email or password";
+    }
+}
+
+// Registration
+if(isset($_POST['register'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+    if (mysqli_query($conn, $sql)) {
+        echo "Registration successful";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+}
+
+// Logout
+if(isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header('Location: login.php'); // Redirect to login page
+    exit();
+}
+?>
+
 </body>
 
 </html>
