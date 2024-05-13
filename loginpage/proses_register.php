@@ -1,26 +1,23 @@
 <?php
-//memanggil file koneksi php
+    //memanggil file koneksi.php
     include "koneksi.php";
     $username=$_POST['username'];
     $password=$_POST['password'];
+    $nama=$_POST['nama'];
+    $level="user";//level otomatis diisi user pd saat registrasi
+    
+    //format acak password harus sama dengan proses_login.php
+    $pengacak="p3ng4c4k";
+    $password_acak=md5($pengacak.md5($password).$pengacak);
     $kirim=$_POST['kirim'];
 
-//proses kirim data ke database mysql
-if(isset($_POST['kirim'])){
-    // Pastikan variabel POST tersedia sebelum mengaksesnya
-    $username = isset($_POST['username']) ? $_POST['username'] : '';
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $password = isset($_POST['password']) ? $_POST['password'] : '';
-
-    // Proses kirim data ke database mysql
-    $query="INSERT INTO `tb_user`(`id_user`, `username`, `email`, `password`) VALUES ('','$username','$email','$password')";
-    $hasil=mysqli_query($conn,$query);
-    if($hasil){
-        // Registrasi berhasil, lakukan redirect
-        header("Location: landingpage.php");
-        exit();
+    //proses kirim data ke database MYSQL
+    if($kirim){
+        $query="INSERT INTO `tb_user`(`id_user`, `username`, `email`, `password`, `level`) VALUES (NULL,'$username','$email','$password','$level')";
+        $hasil=mysqli_query($conn,$query);
+        echo "Registrasi User Berhasil<br>";
+        echo "<a href='login.php'>Login User</a>";
     } else {
         echo "Registrasi User Gagal!";
     }
-}
 ?>
