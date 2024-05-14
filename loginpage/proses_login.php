@@ -4,14 +4,14 @@ session_start();
 //memanggil file koneksi ke database
 include "koneksi.php";
 //menangkap data yang dikirim dari form login.php
-$username=$_POST['username'];
+$email=$_POST['email'];
 $password=$_POST['password'];
 //format acak password harus sama dengan proses_register.php
 $pengacak="p3ng4c4k";
 $password_acak=md5($pengacak.md5($password).$pengacak);
-$kirim=$_POST['kirim'];
+$kirim=$_POST['kirim_login'];
 //menyeleksi data user dengan username dan password acak yang sesuai
-$query="SELECT * FROM `tb_user` WHERE `username` LIKE '$username' AND `password` LIKE '$password'";
+$query="SELECT * FROM `tb_user` WHERE `email` LIKE '$email' AND `password` LIKE '$password'";
 //menjalankan query ditampung dlm variabel $hasil
 $hasil=mysqli_query($conn,$query);
 //menangkap data dari hasil perintah query sql
