@@ -64,7 +64,7 @@
                                     <span class="label-char" style="--index: 7">d</span></label>
                             </div>
                             <div class="btn input-box d-block pt-4">
-                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Login">
+                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Login" name="kirim_login">
                             </div>
                             <div class="text reg-txt" style="text-align: center">Belum punya akun? <label
                                     style="color: #03A5CA; text-decoration: underline;" for="flip">Daftar
@@ -124,7 +124,7 @@
                                 </label>
                             </div>
                             <div class="btn input-box d-block">
-                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Register" name="kirim">
+                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Register" name="kirim_register">
                             </div>
                             <div class="text reg-txt" style="text-align: center">Sudah punya akun? <label
                                     style="color: #03A5CA; text-decoration: underline;" for="flip">Login</label>
