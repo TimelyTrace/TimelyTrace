@@ -66,7 +66,7 @@
             <div class="container">
                 <div class="upper-line"
                     style="width: 100%; height: 10px; background-color:#AAD7D9; border-radius: 10px 10px 0 0;"></div>
-                <form action="#" method="post" class="sidebar-form">
+                <form action="proses_input.php" method="post" class="sidebar-form">
                     <p class="m-3" style="font-weight: 600; color: #635151">Input Daftar Siswa Terlambat</p>
                     <div class="form-group row">
                         <label for="nama" class="col-sm-4 col-form-label">Nama Siswa</label>
