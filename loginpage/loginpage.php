@@ -37,7 +37,7 @@
                     <div class="upper-text">
                     <h3 class="title pt-1 mb-0" >Selamat datang kembali!</h3>
                     <p class="desc pb-2"style="font-family: 'Noto Serif', serif;">Silakan masuk untuk mengakses akun Anda.</p></div>
-                    <form action="#">
+                    <form action="proses_login.php" method="post">
                         <div class="input-boxs">
                             <div class="wave-group">
                                 <input required="" type="text" class="inpute" name="email">
@@ -64,7 +64,7 @@
                                     <span class="label-char" style="--index: 7">d</span></label>
                             </div>
                             <div class="btn input-box d-block pt-4">
-                                <input type="submit" class="btn_input" onclick="window.location.href='landingpage.php'" value="Login" name="kirim_login">
+                                <input type="submit" class="btn_input" value="Login" name="kirim_login">
                             </div>
                             <div class="text reg-txt" style="text-align: center">Belum punya akun? <label
                                     style="color: #03A5CA; text-decoration: underline;" for="flip">Daftar
