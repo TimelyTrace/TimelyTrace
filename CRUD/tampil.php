@@ -1,6 +1,6 @@
 <?php
 include "koneksi.php"; //panggil file koneksi
-$query="SELECT * FROM tb_web"; //buat query sql
+$query="SELECT * FROM tb_input"; //buat query sql
 $hasil=mysqli_query($conn, $query); //jalankan query sql
 $no=1;
 $jum=mysqli_num_rows($hasil); //menghitung banyak row/baris data
@@ -15,4 +15,3 @@ while ($data=mysqli_fetch_array($hasil))
 <td><a href="form_update.php?nis=<?php echo $data['username'];?>">Edit</a></td>
 <td><a href="delete.php?nis=<?php echo $data['username'];?>"onclick="return confirm('apakah anda yakin?')">Hapus</a></td>
 </tr>
-<?php
