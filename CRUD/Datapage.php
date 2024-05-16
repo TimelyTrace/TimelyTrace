@@ -29,6 +29,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
+                        
                         <i class="fa-solid fa-house"></i>
                         <span style="font-weight: 600;">Dasbor</span>
                     </a>
