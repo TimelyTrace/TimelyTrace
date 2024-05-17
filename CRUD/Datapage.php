@@ -87,55 +87,7 @@
                     </tr>
                 </table>
 
-                <!--
-                <form action=" #" method="post" class="sidebar-form">
-                                <p class="m-3" style="font-weight: 600; color: #635151">Input Daftar Siswa Terlambat</p>
-                                <div class="form-group row">
-                                    <label for="nama" class="col-sm-4 col-form-label">Nama Siswa</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nama" name="nama"
-                                            style="background-color: #EEEEEE;" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="kelas" class="col-sm-4 col-form-label">Kelas</label>
-                                    <div class="col-sm-8">
-                                        <select class="form-control" id="kelas" name="kelas"
-                                            style="background-color: #EEEEEE;">
-                                            <option value="X RPL A">X RPL A</option>
-                                            <option value="X RPL B">X RPL B</option>
-                                            <option value="X RPL C">X RPL C</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="absen" class="col-sm-4 col-form-label">No Absen</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control" id="absen" name="absen"
-                                            style="background-color: #EEEEEE;">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="tanggal" class="col-sm-4 col-form-label">Tanggal keterlambatan</label>
-                                    <div class="col-sm-8">
-                                        <input type="date" class="form-control" id="tanggal" name="tanggal"
-                                            style="background-color: #EEEEEE;" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="alasan" class="col-sm-4 col-form-label">Alasan</label>
-                                    <div class="col-sm-8">
-                                        <textarea class="form-control" id="alasan" name="alasan"
-                                            style="background-color: #EEEEEE;"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-8 offset-sm-10">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                                </div>
-                                </form>
-            </div>-->
+            </div>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="../CRUD/Datapage" class="sidebar-link">
                         <i class="fa-solid fa-clipboard-list"></i>
                         <span style="font-weight: 600;">Catatan</span>
                     </a>
