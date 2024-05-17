@@ -72,7 +72,7 @@
                         <th>NISN</th>
                         <th>Nama Siswa</th>
                         <th>Kelas</th>
-                        <th>no Absen</th>
+                        <th>No Absen</th>
                         <th>Tanggal Terlambat</th>
                         <th>Alasan</th>
                         <th colspan="2">Action</th>
@@ -81,13 +81,12 @@
                     <?php
                     // Memasukkan file koneksi database
                     include "koneksi.php";
-                    
                     // Menjalankan query untuk mengambil data dari tabel tb_input
-                    $query = "SELECT * FROM 'tb_input'";
-                    $hasil = mysqli_query($koneksi, $query);
+                    $query = "SELECT * FROM `tb_input`";
+                    $hasil = mysqli_query($conn, $query);
 
                     if (!$hasil) {
-                        die("Query gagal: " . mysqli_error($koneksi));
+                        die("Query gagal: " . mysqli_error($conn));
                     }
 
                     // Memeriksa apakah ada hasil dari query
