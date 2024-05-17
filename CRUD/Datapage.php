@@ -83,11 +83,15 @@
                     include "koneksi.php";
                     
                     // Menjalankan query untuk mengambil data dari tabel tb_input
-                    $query = "SELECT * FROM tb_input";
+                    $query = "SELECT * FROM 'tb_input'";
                     $hasil = mysqli_query($koneksi, $query);
 
+                    if (!$hasil) {
+                        die("Query gagal: " . mysqli_error($koneksi));
+                    }
+
                     // Memeriksa apakah ada hasil dari query
-                    if ($hasil) {
+                    if (mysqli_num_rows($hasil) > 0) {
                         // Mendapatkan jumlah baris data
                         $jum = mysqli_num_rows($hasil);
                         echo "Banyak data: " . $jum . "<br>";
