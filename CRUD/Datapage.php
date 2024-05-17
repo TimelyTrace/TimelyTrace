@@ -130,7 +130,7 @@
                                 <div class="form-group row">
                                     <label for="kelas" class="col-sm-4 col-form-label">Kelas</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control" id="kelas" name="kelas"
+                                        <select class="form-control" id="kelas" name="kelas" 
                                             style="background-color: #EEEEEE;">
                                             <option value="X RPL A">X RPL A</option>
                                             <option value="X RPL B">X RPL B</option>
