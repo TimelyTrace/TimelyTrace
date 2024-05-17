@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
-$username=$_GET['username'];
-$query="DELETE FROM tb_input where username='$username'";
+$username=$_GET['nisn'];
+$query="DELETE FROM tb_input where nisn='$nisn'";
 $hasil=mysqli_query($conn,$query);
 if($hasil){
 ?>
