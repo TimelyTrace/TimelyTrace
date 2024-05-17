@@ -78,12 +78,12 @@
                         <th colspan="2">Action</th>
                     </tr>
                     <tr>
-                        <th>NIS</th>
-                        <th>Nama Siswa</th>
-                        <th>Kelas</th>
-                        <th>no Absen</th>
-                        <th>Tanggal Terlambat</th>
-                        <th>Alasan</th>
+                        <td>NIS</td>
+                        <td>Nama</td>
+                        <td>Kelas</td>
+                        <td>no Absen</td>
+                        <td>Tanggal Terlambat</td>
+                        <td>Alasan</td>
                         <td class="text-end" style="border-right: none; width: 92px"><a href="#" class="btn btn-warning">Edit<i class="bi bi-pencil-square"></i></a></td>
                         <td style="border-left: none"><a href="#" class="btn btn-danger">Hapus<i class="bi bi-trash-fill"></i></a></td>
                     </tr>
