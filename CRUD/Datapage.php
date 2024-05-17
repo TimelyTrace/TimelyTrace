@@ -69,6 +69,7 @@
                     style="width: 100%; height: 10px; background-color:#AAD7D9; border-radius: 10px 10px 0 0;"></div>
                 <table class="table table-bordered m-2 " style="width: 98%;">
                     <tr class="text-center">
+                        <th>NIS</th>
                         <th>Nama Siswa</th>
                         <th>Kelas</th>
                         <th>no Absen</th>
@@ -77,16 +78,38 @@
                         <th colspan="2">Action</th>
                     </tr>
                     <tr>
-                        <td>No</td>
                         <td>NIS</td>
                         <td>Nama</td>
+                        <td>Kelas</td>
                         <td>no Absen</td>
                         <td>Tanggal Terlambat</td>
+                        <td>Alasan</td>
                         <td class="text-end" style="border-right: none; width: 92px"><a href="#" class="btn btn-warning">Edit<i class="bi bi-pencil-square"></i></a></td>
                         <td style="border-left: none"><a href="#" class="btn btn-danger">Hapus<i class="bi bi-trash-fill"></i></a></td>
                     </tr>
                 </table>
 
+                <?php
+                include "koneksi.php";
+                $query="SELECT * FROM tb_input";
+                $no=1;
+                $jum=mysqli_num_rows($hasil);
+                echo "Banyak data : ".$jum."<br>";
+
+                while ($data=mysqli_num_rows($hasil)) {
+                ?>
+                    <tr>
+                    <td><?php echo $data['nis'];?></td>
+                    <td><?php echo $data['nama'];?></td>
+                    <td><?php echo $data['absen'];?></td>
+                    <td><?php echo $data['tanggal'];?></td>
+                    <td><a href="detail.php?nis=<?php echo $data['nis']; ?>">Detail</a></td>
+                    <td><a href="form_update.php?nis=<?php echo $data['nis']; ?>">Detail</a></td>
+                    <td><a href="delete.php?nis=<?php echo $data['nis']; ?>"onclick="return confirm('apakah anda yakin?')">Detail</a></td>
+                </tr>
+                <?php
+                }
+                ?>
                 <!--
                 <form action=" #" method="post" class="sidebar-form">
                                 <p class="m-3" style="font-weight: 600; color: #635151">Input Daftar Siswa Terlambat</p>
