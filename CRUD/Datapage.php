@@ -94,7 +94,7 @@
                 $query="SELECT * FROM tb_input";
                 $no=1;
                 $jum=mysqli_num_rows($hasil);
-                echo "Banyak data : ".$jum"<br>";
+                echo "Banyak data : ".$jum."<br>";
 
                 while ($data=mysqli_num_rows($hasil)) {
                 ?>
@@ -106,7 +106,10 @@
                     <td><a href="detail.php?nis=<?php echo $data['nis']; ?>">Detail</a></td>
                     <td><a href="form_update.php?nis=<?php echo $data['nis']; ?>">Detail</a></td>
                     <td><a href="delete.php?nis=<?php echo $data['nis']; ?>"onclick="return confirm('apakah anda yakin?')">Detail</a></td>
+                </tr>
+                <?php
                 }
+                ?>
                 <!--
                 <form action=" #" method="post" class="sidebar-form">
                                 <p class="m-3" style="font-weight: 600; color: #635151">Input Daftar Siswa Terlambat</p>
