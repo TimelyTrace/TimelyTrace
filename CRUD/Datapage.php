@@ -82,7 +82,7 @@
                     // Memasukkan file koneksi database
                     include "koneksi.php";
                     // Menjalankan query untuk mengambil data dari tabel tb_input
-                    $query = "SELECT * FROM `tb_input`";
+                    $query = "SELECT * FROM `tb_input` ORDER BY `kelas`";
                     $hasil = mysqli_query($conn, $query);
 
                     if (!$hasil) {
