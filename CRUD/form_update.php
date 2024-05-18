@@ -7,7 +7,7 @@ if (isset($_POST['nisn'])) {
     $nisn = $_POST['nisn'];
 
     // Persiapkan pernyataan
-    $query = "SELECT * FROM tb_input WHERE nisn=?";
+    $query = "SELECT * FROM tb_input WHERE nisn=nisn";
     $stmt = $conn->prepare($query);
 
     if ($stmt) {
