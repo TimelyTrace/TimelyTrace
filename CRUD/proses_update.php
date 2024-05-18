@@ -1,8 +1,6 @@
 <?php
 include "koneksi.php";
 $nisn=$_POST['nisn'];
-$password=$_POST['password'];
-
 $query="UPDATE tb_input SET username='$username' WHERE password='$password'";
 $hasil=mysqli_query($conn,$query);
 if($hasil){
