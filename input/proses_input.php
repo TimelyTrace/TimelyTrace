@@ -9,17 +9,19 @@ $absen = $_POST['absen'];
 $tanggal = $_POST['tanggal'];
 $alasan = $_POST['alasan'];
 
-// Mengecek apakah tombol submit diklik
-if (isset($_POST['kirim_input'])) {
-    // Menghindari injeksi SQL
-    $nama = $conn->real_escape_string($nama);
-    $kelas = $conn->real_escape_string($kelas);
-    $absen = (int) $absen;
-    $tanggal = $conn->real_escape_string($tanggal);
-    $alasan = $conn->real_escape_string($alasan);
+if(isset($_POST['submit'])) {
+    $nisn = $_POST['nisn'];
+    $nama = $_POST['nama'];
+    $kelas = $_POST['kelas'];
+    $absen = $_POST['absen'];
+    $tanggal = $_POST['tanggal'];
+    $alasan = $_POST['alasan'];
 
-    // Query untuk memasukkan data
-    $query = "INSERT INTO `tb_input`(`nama`, `kelas`, `absen`, `tanggal`, `alasan`) VALUES ('$nama','$kelas','$absen','$tanggal','$alasan')";
+    $query = "UPDATE `tb_input` SET nama='$nama', kelas='$kelas', absen='$absen', tanggal='$tanggal', alasan='$alasan' WHERE nisn='$nisn'";
+    $hasil = mysqli_query($conn, $query);
+
+    if($hasil) {
+        echo "Data berhasil diperbarui.";
 
     // Menjalankan query dan memeriksa hasilnya
     if ($conn->query($query) === TRUE) {
@@ -31,12 +33,8 @@ if (isset($_POST['kirim_input'])) {
         echo $alasan . "<br>";
         echo "<a href='../CRUD/Datapage.php'>ke CRUD</a>";
     } else {
-        echo "Data gagal masuk: " . $conn->error;
+        echo "Gagal memperbarui data: " . mysqli_error($conn);
     }
-} else {
-    echo "Data gagal masuk!";
 }
-
-// Menutup koneksi
-$conn->close();
+}
 ?>
