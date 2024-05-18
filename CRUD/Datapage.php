@@ -82,7 +82,7 @@
                     // Memasukkan file koneksi database
                     include "koneksi.php";
                     // Menjalankan query untuk mengambil data dari tabel tb_input
-                    $query = "SELECT * FROM `tb_input`";
+                    $query = "SELECT * FROM `tb_input` ORDER BY `kelas`";
                     $hasil = mysqli_query($conn, $query);
 
                     if (!$hasil) {
@@ -115,7 +115,7 @@
                     }
                     ?>
                 </table>
-    
+
                 <!--
                 <form action=" #" method="post" class="sidebar-form">
                                 <p class="m-3" style="font-weight: 600; color: #635151">Input Daftar Siswa Terlambat</p>
@@ -129,7 +129,7 @@
                                 <div class="form-group row">
                                     <label for="kelas" class="col-sm-4 col-form-label">Kelas</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control" id="kelas" name="kelas" 
+                                        <select class="form-control" id="kelas" name="kelas"
                                             style="background-color: #EEEEEE;">
                                             <option value="X RPL A">X RPL A</option>
                                             <option value="X RPL B">X RPL B</option>

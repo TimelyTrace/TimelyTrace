@@ -18,9 +18,9 @@
     <div class="wrapper">
         <aside id="sidebar" class="expand">
             <div class="d-flex align-items-center justify-content-start"
-                style="height: 50px; justify-content: center; background-color: #3B84A3">
+                style="height: 50px; justify-content: center;">
                 <button class="toggle-btn" type="button">
-                    <i class="fa-solid fa-bars"></i>
+                    <img src="img/logo.svg" alt="logo" style="width: 40px;">
                 </button>
                 <div class="sidebar-logo">
                     <a href="#">TimelyTrace</a>
@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="../CRUD/Datapage" class="sidebar-link">
                         <i class="fa-solid fa-clipboard-list"></i>
                         <span style="font-weight: 600;">Catatan</span>
                     </a>
@@ -61,7 +61,6 @@
         </aside>
 
         <div class="main" style="background-color: #EEEEEE">
-            <div class="nullbar"></div>
             <h4 class="ms-4 mt-3 mb-4">Input Daftar Siswa Terlambat</h4>
             <div class="container">
                 <div class="upper-line"
@@ -71,13 +70,13 @@
                     <div class="form-group row">
                         <label for="nama" class="col-sm-4 col-form-label">Nama Siswa</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="nama" name="nama" style="background-color: #EEEEEE;" placeholder="" required>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="kelas" class="col-sm-4 col-form-label">Kelas</label>
                         <div class="col-sm-8">
-                            <select class="form-control" id="kelas" name="kelas" style="background-color: #EEEEEE;">
+                            <select class="form-control" id="kelas" name="kelas">
                                 <option value="X RPL A">X RPL A</option>
                                 <option value="X RPL B">X RPL B</option>
                                 <option value="X RPL C">X RPL C</option>
@@ -87,19 +86,19 @@
                     <div class="form-group row">
                         <label for="absen" class="col-sm-4 col-form-label">No Absen</label>
                         <div class="col-sm-8">
-                            <input type="number" class="form-control" id="absen" name="absen" style="background-color: #EEEEEE;">
+                            <input type="number" class="form-control" id="absen" name="absen">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="tanggal" class="col-sm-4 col-form-label">Tanggal keterlambatan</label>
                         <div class="col-sm-8">
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" style="background-color: #EEEEEE;" placeholder="">
+                            <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="alasan" class="col-sm-4 col-form-label">Alasan</label>
                         <div class="col-sm-8">
-                            <textarea class="form-control" id="alasan" name="alasan" style="background-color: #EEEEEE;"></textarea>
+                            <textarea class="form-control" id="alasan" name="alasan"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
