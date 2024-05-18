@@ -29,7 +29,7 @@ if (isset($_POST['kirim_input'])) {
         echo $absen. "<br>";
         echo $tanggal. "<br>";
         echo $alasan. "<br>";
-        echo "<a href='../Database/Database.php'>ke Database</a>";
+        echo "<a href='../Datapage/Datapage.php'>ke Datapage</a>";
     } else {
         echo "Data gagal masuk: " . $conn->error;
     }
