@@ -91,10 +91,7 @@
 
                     // Memeriksa apakah ada hasil dari query
                     if (mysqli_num_rows($hasil) > 0) {
-                        // Mendapatkan jumlah baris data
-                        $jum = mysqli_num_rows($hasil);
-                        echo "Banyak data: " . $jum . "<br>";
-
+                        
                         // Mengambil data per baris dan menampilkannya dalam tabel
                         while ($data = mysqli_fetch_assoc($hasil)) {
                     ?>
@@ -105,7 +102,7 @@
                                 <td><?php echo $data['absen']; ?></td>
                                 <td><?php echo $data['tanggal']; ?></td>
                                 <td><?php echo $data['alasan']; ?></td>
-                                <td class="text-end" style="border-right: none; width: 92px"><a href="form_update.php?nis=<?php echo $data['nisn']; ?>" class="btn btn-warning">Edit<i class="bi bi-pencil-square"></i></a></td>
+                                <td class="text-end" style="border-right: none; width: 92px"><a href="form_update.php?nisn=<?php echo $data['nisn']; ?>" class="btn btn-warning">Edit<i class="bi bi-pencil-square"></i></a></td>
                                 <td style="border-left: none"><a href="delete.php?nis=<?php echo $data['nisn']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin?')">Hapus<i class="bi bi-trash-fill"></i></a></td>
                             </tr>
                     <?php
