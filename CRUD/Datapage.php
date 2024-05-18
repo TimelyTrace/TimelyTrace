@@ -69,25 +69,102 @@
                     style="width: 100%; height: 10px; background-color:#AAD7D9; border-radius: 10px 10px 0 0;"></div>
                 <table class="table table-bordered m-2 " style="width: 98%;">
                     <tr class="text-center">
+                        <th>NISN</th>
                         <th>Nama Siswa</th>
                         <th>Kelas</th>
-                        <th>no Absen</th>
+                        <th>No Absen</th>
                         <th>Tanggal Terlambat</th>
                         <th>Alasan</th>
                         <th colspan="2">Action</th>
                     </tr>
-                    <tr>
-                        <td>No</td>
-                        <td>NIS</td>
-                        <td>Nama</td>
-                        <td>no Absen</td>
-                        <td>Tanggal Terlambat</td>
-                        <td class="text-end" style="border-right: none; width: 92px"><a href="#" class="btn btn-warning">Edit<i class="bi bi-pencil-square"></i></a></td>
-                        <td style="border-left: none"><a href="#" class="btn btn-danger">Hapus<i class="bi bi-trash-fill"></i></a></td>
-                    </tr>
+
+                    <?php
+                    // Memasukkan file koneksi database
+                    include "koneksi.php";
+                    // Menjalankan query untuk mengambil data dari tabel tb_input
+                    $query = "SELECT * FROM `tb_input` ORDER BY `kelas`";
+                    $hasil = mysqli_query($conn, $query);
+
+                    if (!$hasil) {
+                        die("Query gagal: " . mysqli_error($conn));
+                    }
+
+                    // Memeriksa apakah ada hasil dari query
+                    if (mysqli_num_rows($hasil) > 0) {
+                        // Mendapatkan jumlah baris data
+                        $jum = mysqli_num_rows($hasil);
+                        echo "Banyak data: " . $jum . "<br>";
+
+                        // Mengambil data per baris dan menampilkannya dalam tabel
+                        while ($data = mysqli_fetch_assoc($hasil)) {
+                    ?>
+                            <tr>
+                                <td><?php echo $data['nisn']; ?></td>
+                                <td><?php echo $data['nama']; ?></td>
+                                <td><?php echo $data['kelas']; ?></td>
+                                <td><?php echo $data['absen']; ?></td>
+                                <td><?php echo $data['tanggal']; ?></td>
+                                <td><?php echo $data['alasan']; ?></td>
+                                <td class="text-end" style="border-right: none; width: 92px"><a href="form_update.php?nis=<?php echo $data['nisn']; ?>" class="btn btn-warning">Edit<i class="bi bi-pencil-square"></i></a></td>
+                                <td style="border-left: none"><a href="delete.php?nis=<?php echo $data['nisn']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin?')">Hapus<i class="bi bi-trash-fill"></i></a></td>
+                            </tr>
+                    <?php
+                        }
+                    } else {
+                        echo "Tidak ada data.";
+                    }
+                    ?>
                 </table>
 
-            </div>
+                <!--
+                <form action=" #" method="post" class="sidebar-form">
+                                <p class="m-3" style="font-weight: 600; color: #635151">Input Daftar Siswa Terlambat</p>
+                                <div class="form-group row">
+                                    <label for="nama" class="col-sm-4 col-form-label">Nama Siswa</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nama" name="nama"
+                                            style="background-color: #EEEEEE;" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="kelas" class="col-sm-4 col-form-label">Kelas</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="kelas" name="kelas"
+                                            style="background-color: #EEEEEE;">
+                                            <option value="X RPL A">X RPL A</option>
+                                            <option value="X RPL B">X RPL B</option>
+                                            <option value="X RPL C">X RPL C</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="absen" class="col-sm-4 col-form-label">No Absen</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="absen" name="absen"
+                                            style="background-color: #EEEEEE;">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="tanggal" class="col-sm-4 col-form-label">Tanggal keterlambatan</label>
+                                    <div class="col-sm-8">
+                                        <input type="date" class="form-control" id="tanggal" name="tanggal"
+                                            style="background-color: #EEEEEE;" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="alasan" class="col-sm-4 col-form-label">Alasan</label>
+                                    <div class="col-sm-8">
+                                        <textarea class="form-control" id="alasan" name="alasan"
+                                            style="background-color: #EEEEEE;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-8 offset-sm-10">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                                </form>
+            </div>-->
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

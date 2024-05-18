@@ -12,6 +12,6 @@ while ($data=mysqli_fetch_array($hasil))
 <td><?php echo $no++;?></td>
 <td><?php echo $data['username'];?></td>
 <td><?php echo $data['password'];?></td>
-<td><a href="form_update.php?nis=<?php echo $data['username'];?>">Edit</a></td>
+<td><a href="form_update.php?nis=<?php echo $data['nisn'];?>">Edit</a></td>
 <td><a href="delete.php?nis=<?php echo $data['username'];?>"onclick="return confirm('apakah anda yakin?')">Hapus</a></td>
 </tr>
