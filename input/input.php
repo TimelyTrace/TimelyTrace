@@ -17,22 +17,16 @@
 <body>
     <div class="wrapper">
         <aside id="sidebar" class="expand">
-            <div class="d-flex align-items-center justify-content-start"
+            <div class="d-flex align-items-center justify-content-start mt-3"
                 style="height: 50px; justify-content: center;">
                 <button class="toggle-btn" type="button">
-                    <img src="img/logo.svg" alt="logo" style="width: 40px;">
+                    <img src="img/logo.svg" alt="logo" style="width: 50px;">
                 </button>
                 <div class="sidebar-logo">
-                    <a href="#">TimelyTrace</a>
+                    <a href="../landingpage/landingpage.html">TimelyTrace</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-house"></i>
-                        <span style="font-weight: 600;">Dasbor</span>
-                    </a>
-                </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                         <i class="fa-solid fa-pen-to-square"></i>
@@ -47,17 +41,30 @@
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-gear"></i>
-                        <span style="font-weight: 600;">Setting</span>
+                        <i class="bi bi-people-fill"></i>
+                        <span style="font-weight: 600;">Kelas</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="bi bi-question-circle-fill"></i>
+                        <span style="font-weight: 600;">Faq</span>
                     </a>
                 </li>
             </ul>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                <i class="bi bi-headset"></i>
+                    <span style="font-weight: 600;">Bantuan?</span>
+                </a>
+            </div>
             <div class="sidebar-footer">
                 <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span style="font-weight: 600;">Logout</span>
                 </a>
             </div>
+
         </aside>
 
         <div class="main" style="background-color: #EEEEEE">
@@ -92,7 +99,8 @@
                     <div class="form-group row">
                         <label for="tanggal" class="col-sm-4 col-form-label">Tanggal keterlambatan</label>
                         <div class="col-sm-8">
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="">
+                            <input type="datetime-local" class="form-control" id="tanggal" name="tanggal"
+                                placeholder="">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -109,6 +117,7 @@
                 </form>
             </div>
         </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

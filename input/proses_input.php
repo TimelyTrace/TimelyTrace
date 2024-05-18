@@ -24,16 +24,12 @@ if (isset($_POST['kirim_input'])) {
     // Menjalankan query dan memeriksa hasilnya
     if ($conn->query($query) === TRUE) {
         echo "Data berhasil masuk database<br>";
-        echo $nama. "<br>";
-        echo $kelas. "<br>";
-        echo $absen. "<br>";
-        echo $tanggal. "<br>";
-        echo $alasan. "<br>";
-<<<<<<< HEAD
-        echo "<a href='../Database/Database.php'>ke Database</a>";
-=======
+        echo $nama . "<br>";
+        echo $kelas . "<br>";
+        echo $absen . "<br>";
+        echo $tanggal . "<br>";
+        echo $alasan . "<br>";
         echo "<a href='../CRUD/Datapage.php'>ke CRUD</a>";
->>>>>>> 5f9a67f11d35600144871c16c2cbe4c01a01a8c7
     } else {
         echo "Data gagal masuk: " . $conn->error;
     }
