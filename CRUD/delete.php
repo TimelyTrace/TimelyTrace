@@ -1,13 +1,16 @@
 <?php
 include "koneksi.php";
-$nisn=$_GET['nisn'];
-$query="DELETE FROM `tb_input` where nisn='$nisn'";
-$hasil=mysqli_query($conn,$query);
-if($hasil){
-?>
-<script language="javascript">document.location.href="Datapage.php"</script>    
+$nisn = $_GET['nisn'];
+$query = "DELETE FROM `tb_input` WHERE nisn='$nisn'";
+$hasil = mysqli_query($conn, $query);
+
+if ($hasil) {
+    ?>
+    <script language="javascript">
+        document.location.href = "Datapage.php"
+    </script>
 <?php
-}else{
-    echo "gagal hapus data";
+} else {
+    echo "Gagal hapus data: " . mysqli_error($conn); // Menampilkan pesan kesalahan
 }
 ?>

@@ -28,13 +28,13 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="../input/input.php" class="sidebar-link">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span style="font-weight: 600;">Input</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="../CRUD/Datapage" class="sidebar-link">
+                    <a href="../CRUD/Datapage.php" class="sidebar-link">
                         <i class="fa-solid fa-clipboard-list"></i>
                         <span style="font-weight: 600;">Catatan</span>
                     </a>
@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="../faq/faq.html" class="sidebar-link">
                         <i class="bi bi-question-circle-fill"></i>
                         <span style="font-weight: 600;">Faq</span>
                     </a>
