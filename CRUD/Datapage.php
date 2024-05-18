@@ -16,53 +16,59 @@
 
 <body>
     <div class="wrapper">
-        <aside id="sidebar" class="expand">
-            <div class="d-flex align-items-center justify-content-start"
-                style="height: 50px; justify-content: center; background-color: #3B84A3">
+    <aside id="sidebar" class="expand">
+            <div class="d-flex align-items-center justify-content-start mt-3"
+                style="height: 50px; justify-content: center;">
                 <button class="toggle-btn" type="button">
-                    <i class="fa-solid fa-bars"></i>
+                    <img src="img/logo.svg" alt="logo" style="width: 50px;">
                 </button>
                 <div class="sidebar-logo">
-                    <a href="#">TimelyTrace</a>
+                    <a href="../loginpage/landingpage.html">TimelyTrace</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
-                        
-                        <i class="fa-solid fa-house"></i>
-                        <span style="font-weight: 600;">Dasbor</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="../input/input.php" class="sidebar-link">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <span style="font-weight: 600;">Input</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="../CRUD/Datapage.php" class="sidebar-link">
                         <i class="fa-solid fa-clipboard-list"></i>
                         <span style="font-weight: 600;">Catatan</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <i class="fa-solid fa-gear"></i>
-                        <span style="font-weight: 600;">Setting</span>
+                        <i class="bi bi-people-fill"></i>
+                        <span style="font-weight: 600;">Kelas</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="../faq/faq.html" class="sidebar-link">
+                        <i class="bi bi-question-circle-fill"></i>
+                        <span style="font-weight: 600;">Faq</span>
                     </a>
                 </li>
             </ul>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                <i class="bi bi-headset"></i>
+                    <span style="font-weight: 600;">Bantuan?</span>
+                </a>
+            </div>
             <div class="sidebar-footer">
                 <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span style="font-weight: 600;">Logout</span>
                 </a>
             </div>
+
         </aside>
 
         <div class="main" style="background-color: #EEEEEE">
-            <div class="nullbar"></div>
+            
             <h4 class="ms-4 mt-3 mb-4">Data Siswa Terlambat</h4>
             <div class="container">
                 <div class="upper-line"
@@ -112,56 +118,6 @@
                     }
                     ?>
                 </table>
-    
-                <!--
-                <form action=" #" method="post" class="sidebar-form">
-                                <p class="m-3" style="font-weight: 600; color: #635151">Input Daftar Siswa Terlambat</p>
-                                <div class="form-group row">
-                                    <label for="nama" class="col-sm-4 col-form-label">Nama Siswa</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nama" name="nama"
-                                            style="background-color: #EEEEEE;" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="kelas" class="col-sm-4 col-form-label">Kelas</label>
-                                    <div class="col-sm-8">
-                                        <select class="form-control" id="kelas" name="kelas" 
-                                            style="background-color: #EEEEEE;">
-                                            <option value="X RPL A">X RPL A</option>
-                                            <option value="X RPL B">X RPL B</option>
-                                            <option value="X RPL C">X RPL C</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="absen" class="col-sm-4 col-form-label">No Absen</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control" id="absen" name="absen"
-                                            style="background-color: #EEEEEE;">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="tanggal" class="col-sm-4 col-form-label">Tanggal keterlambatan</label>
-                                    <div class="col-sm-8">
-                                        <input type="date" class="form-control" id="tanggal" name="tanggal"
-                                            style="background-color: #EEEEEE;" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="alasan" class="col-sm-4 col-form-label">Alasan</label>
-                                    <div class="col-sm-8">
-                                        <textarea class="form-control" id="alasan" name="alasan"
-                                            style="background-color: #EEEEEE;"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-8 offset-sm-10">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                                </div>
-                                </form>
-            </div>-->
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

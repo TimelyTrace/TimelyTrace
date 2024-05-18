@@ -1,12 +1,51 @@
 <?php
 include "koneksi.php";
 
+<<<<<<< HEAD
 if(isset($_GET['nisn'])) {
     echo "NISN: " . $nisn . "<br>";
     $nisn = $_GET['nisn'];
     $query = "SELECT * FROM `tb_input` WHERE nisn='$nisn'";
     $hasil = mysqli_query($conn, $query);
     $data = mysqli_fetch_array($hasil);
+=======
+// Pastikan variabel $_POST['nisn'] di-set
+if (isset($_POST['nisn'])) {
+    $nisn = $_POST['nisn'];
+
+    // Persiapkan pernyataan
+    $query = "SELECT * FROM tb_input WHERE nisn=nisn";
+    $stmt = $conn->prepare($query);
+
+    if ($stmt) {
+        // Ikat parameter
+        $stmt->bind_param("s", $nisn);
+
+        // Eksekusi pernyataan
+        $stmt->execute();
+
+        // Ambil hasil
+        $hasil = $stmt->get_result();
+
+        if ($hasil->num_rows > 0) {
+            $data = $hasil->fetch_array(MYSQLI_ASSOC);
+            // $data sekarang berisi data dari baris yang ditemukan
+            // Pastikan untuk menggunakan $data sesuai kebutuhan
+        } else {
+            echo "Data tidak ditemukan untuk NISN: " . htmlspecialchars($nisn);
+        }
+
+        // Tutup pernyataan
+        $stmt->close();
+    } else {
+        echo "Gagal menyiapkan pernyataan: " . $conn->error;
+    }
+
+    // Tutup koneksi
+    $conn->close();
+} else {
+    echo "NISN tidak diberikan.";
+>>>>>>> 568e710a2cf5d7d119277e5d8e51b7859ee2384c
 }
 ?>
 

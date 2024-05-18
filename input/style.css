@@ -6,7 +6,9 @@
     margin: 0;
     padding: 0;
 }
-
+body {
+    background-color: #EEEEEE;
+}
 i {
     height: 30px !important;
 }
@@ -49,10 +51,12 @@ body {
     min-width: 70px;
     z-index: 1000;
     transition: all .25s ease-in-out;
-    background-color: #AAD7D9;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     border: none;
+    border-radius: 20px;
+    margin: 10px 0 10px 10px;
 }
 
 #sidebar.expand {
@@ -64,7 +68,7 @@ body {
     background-color: transparent;
     cursor: pointer;
     border: 0;
-    padding: 1rem 1.5rem;
+    padding: 1rem 0.5rem;
 }
 
 .toggle-btn i {
@@ -95,7 +99,7 @@ body {
 
 a.sidebar-link {
     padding: .625rem 1.625rem;
-    color: #3B84A3;
+    color: #3847c8;
     display: block;
     font-size: 0.9rem;
     white-space: nowrap;
@@ -108,7 +112,7 @@ a.sidebar-link {
 }
 
 a.sidebar-link:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.066);
     border-left: 3px solid #3b7ddd;
 }
 
@@ -150,12 +154,6 @@ a.sidebar-link:hover {
     transform: rotate(45deg);
     transition: all .2s ease-out;
 }
-
-.nullbar {
-    background-color: #3B84A3;
-    height: 50px;
-    width: 100%;
-    border: none;}
 
 .container {
     width: 90%;
