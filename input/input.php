@@ -84,9 +84,7 @@
                         <label for="kelas" class="col-sm-4 col-form-label">Kelas</label>
                         <div class="col-sm-8">
                             <select class="form-control" id="kelas" name="kelas">
-                                <option value="X RPL A">X RPL A</option>
-                                <option value="X RPL B">X RPL B</option>
-                                <option value="X RPL C">X RPL C</option>
+                            <?php include 'get_classes.php'; ?>
                             </select>
                         </div>
                     </div>

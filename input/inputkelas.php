@@ -23,8 +23,8 @@ if ($conn->query($sql) === FALSE) {
     echo "Error creating table: " . $conn->error;
 }
 
-// Handle form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Handle form submission for adding class
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add"])) {
     $nama_kelas = $_POST["kelas"];
 
     if (!empty($nama_kelas)) {
@@ -43,6 +43,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+// Handle form submission for updating class
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update"])) {
+    $id = $_POST["id"];
+    $nama_kelas = $_POST["kelas"];
+
+    if (!empty($nama_kelas)) {
+        $stmt = $conn->prepare("UPDATE kelas SET nama_kelas = ? WHERE id = ?");
+        $stmt->bind_param("si", $nama_kelas, $id);
+
+        if ($stmt->execute()) {
+            echo "<div class='alert alert-success'>Kelas berhasil diperbarui!</div>";
+        } else {
+            echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
+        }
+
+        $stmt->close();
+    } else {
+        echo "<div class='alert alert-warning'>Nama kelas tidak boleh kosong!</div>";
+    }
+}
+
+// Handle form submission for deleting class
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
+    $id = $_POST["id"];
+
+    $stmt = $conn->prepare("DELETE FROM kelas WHERE id = ?");
+    $stmt->bind_param("i", $id);
+
+    if ($stmt->execute()) {
+        echo "<div class='alert alert-success'>Kelas berhasil dihapus!</div>";
+    } else {
+        echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
+    }
+
+    $stmt->close();
+}
+
 // Fetch classes from the database
 $result = $conn->query("SELECT * FROM kelas");
 
@@ -56,9 +93,12 @@ $conn->close();
     <meta charset="UTF-8">
     <title>Input</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="kelas.css">
 </head>
 
@@ -66,7 +106,8 @@ $conn->close();
     <div class="wrapper">
 
         <aside id="sidebar" class="expand">
-            <div class="d-flex align-items-center justify-content-start mt-3" style="height: 50px; justify-content: center;">
+            <div class="d-flex align-items-center justify-content-start mt-3"
+                style="height: 50px; justify-content: center;">
                 <button class="toggle-btn" type="button">
                     <img src="img/logo.svg" alt="logo" style="width: 40px;">
                 </button>
@@ -118,37 +159,82 @@ $conn->close();
         <div class="main" style="background-color: #EEEEEE">
             <h4 class="ms-4 mt-3 mb-4 fw-bold">Daftar Kelas</h4>
 
-            <div class="container-upper">
-                <form action="#" method="post" class="sidebar-form">
+            <div class="container-upper pb-3">
+                <h5 class="ms-4 mt-3 fw-bold">Buat Kelas Baru</h5>
+                <form action="#" method="post" class="sidebar-form ms-4 pb-3">
                     <div class="input-group">
-                        <input type="text" class="input" id="kelas" name="kelas" placeholder="Nama Kelas" autocomplete="off">
-                        <input class="button--submit" value="Tambah" type="submit">
+                        <input type="text" class="input" id="kelas" name="kelas" placeholder="Nama Kelas"
+                            autocomplete="off">
+                        <input class="button--submit" value="Tambah" type="submit" name="add">
                     </div>
                 </form>
             </div>
 
             <div class="container">
+                <h5 class="ms-4 mt-3 fw-bold">Daftar Kelas</h5>
                 <?php if ($result->num_rows > 0): ?>
-                    <ul class="list-group">
-                        <?php while($row = $result->fetch_assoc()): ?>
-                            <li class="list-group-item"><?php echo htmlspecialchars($row["nama_kelas"]); ?></li>
+                    <div class="class-list ms-4 mt-3">
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <div class="class-item">
+                                <span><?php echo htmlspecialchars($row["nama_kelas"]); ?></span>
+                                <div class="mt-2">
+                                    <button class="btn btn-warning btn-sm me-2" data-bs-toggle="modal"
+                                        data-bs-target="#editModal<?php echo $row['id']; ?>">Edit</button>
+                                </div>
+                            </div>
+
+                            <!-- Edit Modal -->
+                            <div class="modal fade" id="editModal<?php echo $row['id']; ?>" tabindex="-1"
+                                aria-labelledby="editModalLabel<?php echo $row['id']; ?>" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel<?php echo $row['id']; ?>">Edit Kelas
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <form action="#" method="post">
+                                            <div class="modal-body">
+                                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                                <div class="mb-3">
+                                                    <label for="kelas" class="form-label">Nama Kelas</label>
+                                                    <input type="text" class="form-control" id="kelas" name="kelas"
+                                                        value="<?php echo htmlspecialchars($row['nama_kelas']); ?>">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form action="#" method="post" class="d-inline">
+                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                                    <button class="btn btn-danger" type="submit"
+                                                        name="delete">Hapus</button>
+                                                </form>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary" name="update">Simpan
+                                                    Perubahan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         <?php endwhile; ?>
-                    </ul>
+                    </div>
                 <?php else: ?>
                     <p class="text-center">Belum ada kelas yang ditambahkan.</p>
                 <?php endif; ?>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+        <script>
+            const hamBurger = document.querySelector(".toggle-btn");
 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script>
-        const hamBurger = document.querySelector(".toggle-btn");
-
-        hamBurger.addEventListener("click", function () {
-            document.querySelector("#sidebar").classList.toggle("expand");
-        });
-    </script>
+            hamBurger.addEventListener("click", function () {
+                document.querySelector("#sidebar").classList.toggle("expand");
+            });
+        </script>
 
 </body>
 

@@ -155,19 +155,6 @@ a.sidebar-link:hover {
     transition: all .2s ease-out;
 }
 
-.container {
-    width: 90%;
-    background-color: #fff;
-    padding: 0;
-    border-radius: 10px 10px 0 0 ;
-    margin-left: 24px;
-    display: inline-block;
-}
-
-.form-group {
-    width: 90%;
-    margin: 20px;
-}
 
 .input-group {
     display: flex;
@@ -175,21 +162,22 @@ a.sidebar-link:hover {
   }
   
   .input {
-    min-height: 50px;
-    max-width: 150px;
+    min-height: 40px;
+    width: 75%;
+    max-width: 1500px;
     padding: 0 1rem;
-    color: #fff;
+    color: #000000;
     font-size: 15px;
-    border: 1px solid #5e4dcd;
-    border-radius: 6px 0 0 6px;
+    border: 1px solid #848487;
+    border-radius: 15px 0 0 15px;
     background-color: transparent;
   }
   
   .button--submit {
-    min-height: 50px;
+    min-height: 40px;
     padding: .5em 1em;
     border: none;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 15px 15px 0;
     background-color: #5e4dcd;
     color: #fff;
     font-size: 15px;
@@ -206,3 +194,51 @@ a.sidebar-link:hover {
     outline: none;
   }
   
+  .container {
+    width: 90%;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 10px;
+    margin-left: 24px;
+    display: inline-block;
+    margin-bottom: 24px;
+    box-shadow: #00000045 0px 0px 10px 0px;
+}
+.container-upper {
+    width: 90%;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 10px;
+    margin-left: 24px;
+    display: inline-block;
+    margin-bottom: 24px;
+    box-shadow: #00000045 0px 0px 10px 0px;
+}
+
+.form-group {
+    width: 90%;
+    margin: 20px;
+}
+
+.class-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.class-item {
+    background-color: #D1C4E9;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.container-upper {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
