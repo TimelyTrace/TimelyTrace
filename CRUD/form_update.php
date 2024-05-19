@@ -4,10 +4,14 @@ include "koneksi.php";
 if(isset($_GET['nisn'])) {
     $nisn = $_GET['nisn'];
     $query = "SELECT * FROM tb_input WHERE nisn='$nisn'";
+    echo "NISN: " . $nisn . "<br>";
+    $nisn = $_GET['nisn'];
+    $query = "SELECT * FROM `tb_input` WHERE nisn='$nisn'";
     $hasil = mysqli_query($conn, $query);
     $data = mysqli_fetch_array($hasil);
 }
 ?>
+
 <form action="proses_update.php" method="post">
     <table class="table table-bordered m-2" style="width: 98%;">
         <tr class="text-center">
@@ -44,4 +48,3 @@ if(isset($_GET['nisn'])) {
         ?>
     </table>
 </form>
-?>

@@ -8,8 +8,8 @@ if (isset($_POST['submit'])) {
     $absen = $_POST['absen'];
     $tanggal = $_POST['tanggal'];
     $alasan = $_POST['alasan'];
-
     $query = "UPDATE tb_input SET nama='$nama',kelas='$kelas',absen='$absen',tanggal='$tanggal',alasan='$alasan' WHERE nisn='$nisn'";
+    $query = "UPDATE `tb_input` SET `nama`='$nama',`kelas`='$kelas',`absen`='$absen',`tanggal`='$tanggal',`alasan`='$alasan' WHERE nisn='$nisn'";
     if (mysqli_query($conn, $query)) {
         echo "Data berhasil diperbarui";
     } else {
@@ -18,6 +18,7 @@ if (isset($_POST['submit'])) {
 
     mysqli_close($conn);
     header("Location: Datapage.php");
-    exit();
+exit();
+    exit();
 }
 ?>

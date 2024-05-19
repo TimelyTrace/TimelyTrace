@@ -9,7 +9,6 @@
 body {
     background-color: #EEEEEE;
 }
-
 i {
     height: 30px !important;
 }
@@ -156,16 +155,114 @@ a.sidebar-link:hover {
     transition: all .2s ease-out;
 }
 
-.container {
-    width: 94%;
+
+.input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    min-height: 40px;
+    width: 75%;
+    max-width: 1500px;
+    padding: 0 1rem;
+    color: #000000;
+    font-size: 15px;
+    border: 1px solid #848487;
+    border-radius: 15px 0 0 15px;
+    background-color: transparent;
+  }
+  
+  .button--submit {
+    min-height: 40px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 15px 15px 0;
+    background-color: #5e4dcd;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+  }
+  
+  .button--submit:hover {
+    background-color: #5e5dcd;
+  }
+  
+  .input:focus, .input:focus-visible {
+    border-color: #3898EC;
+    outline: none;
+  }
+  
+  .container {
+    width: 90%;
     background-color: #fff;
     padding: 0;
-    border-radius: 10px 10px 0 0 ;
+    border-radius: 10px;
     margin-left: 24px;
     display: inline-block;
+    margin-bottom: 24px;
+    box-shadow: #00000045 0px 0px 10px 0px;
+}
+.container-upper {
+    width: 90%;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 10px;
+    margin-left: 24px;
+    display: inline-block;
+    margin-bottom: 24px;
+    box-shadow: #00000045 0px 0px 10px 0px;
 }
 
 .form-group {
     width: 90%;
     margin: 20px;
+}
+
+.class-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.class-item {
+    background-color: #9589CA;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.no-effect-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+}
+
+.no-effect-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.no-effect-button:active {
+    outline: none;
+    box-shadow: none;
+    background: none;
+}
+
+
+.container-upper {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }

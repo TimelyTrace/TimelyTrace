@@ -21,6 +21,7 @@
                 style="height: 50px; justify-content: center;">
                 <button class="toggle-btn" type="button">
                     <img src="img/logo.svg" alt="logo" style="width: 50px;">
+                    <img src="img/logo.svg" alt="logo" style="width: 40px;">
                 </button>
                 <div class="sidebar-logo">
                     <a href="../loginpage/landingpage.html">TimelyTrace</a>
@@ -41,6 +42,7 @@
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
+                    <a href="../input/inputkelas.php" class="sidebar-link">
                         <i class="bi bi-people-fill"></i>
                         <span style="font-weight: 600;">Kelas</span>
                     </a>

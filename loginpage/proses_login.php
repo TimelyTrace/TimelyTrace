@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
         echo "a";
         $_SESSION['userid'] = $row['id_user'];
         $_SESSION['username'] = $row['username'];
-        header("Location: ../landingpage/landingpage.html");
+        header("Location: ../loginpage/landingpage.html");
     } else {
         echo "Invalid password.";
     }

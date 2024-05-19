@@ -26,4 +26,18 @@ if (isset($_GET['nis'])) {
 
 // Tutup koneksi ke database
 mysqli_close($conn);
+=======
+$nisn = $_GET['nisn'];
+$query = "DELETE FROM `tb_input` WHERE nisn='$nisn'";
+$hasil = mysqli_query($conn, $query);
+
+if ($hasil) {
+    ?>
+    <script language="javascript">
+        document.location.href = "Datapage.php"
+    </script>
+<?php
+} else {
+    echo "Gagal hapus data: " . mysqli_error($conn); // Menampilkan pesan kesalahan
+}
 ?>
