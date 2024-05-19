@@ -222,19 +222,43 @@ a.sidebar-link:hover {
 
 .class-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
 }
 
 .class-item {
-    background-color: #D1C4E9;
+    background-color: #9589CA;
     border: none;
     border-radius: 15px;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     color: #FFFFFF;
     font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.no-effect-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+}
+
+.no-effect-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.no-effect-button:active {
+    outline: none;
+    box-shadow: none;
+    background: none;
+}
+
 
 .container-upper {
     padding: 20px;

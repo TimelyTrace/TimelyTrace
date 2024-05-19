@@ -161,7 +161,7 @@ $conn->close();
 
             <div class="container-upper pb-3">
                 <h5 class="ms-4 mt-3 fw-bold">Buat Kelas Baru</h5>
-                <form action="#" method="post" class="sidebar-form ms-4 pb-3">
+                <form action="#" method="post" class="sidebar-form ms-4 pb-1">
                     <div class="input-group">
                         <input type="text" class="input" id="kelas" name="kelas" placeholder="Nama Kelas"
                             autocomplete="off">
@@ -173,15 +173,14 @@ $conn->close();
             <div class="container">
                 <h5 class="ms-4 mt-3 fw-bold">Daftar Kelas</h5>
                 <?php if ($result->num_rows > 0): ?>
-                    <div class="class-list ms-4 mt-3">
+                    <div class="class-list ms-3 me-3 mt-3 pb-3">
                         <?php while ($row = $result->fetch_assoc()): ?>
-                            <div class="class-item">
-                                <span><?php echo htmlspecialchars($row["nama_kelas"]); ?></span>
-                                <div class="mt-2">
-                                    <button class="btn btn-warning btn-sm me-2" data-bs-toggle="modal"
-                                        data-bs-target="#editModal<?php echo $row['id']; ?>">Edit</button>
+                            <button class="btn btn-sm me-2 no-effect-button" data-bs-toggle="modal"
+                                data-bs-target="#editModal<?php echo $row['id']; ?>">
+                                <div class="class-item row align-items-center">
+                                    <span class="col-md-12"><?php echo htmlspecialchars($row["nama_kelas"]); ?></span>
                                 </div>
-                            </div>
+                            </button>
 
                             <!-- Edit Modal -->
                             <div class="modal fade" id="editModal<?php echo $row['id']; ?>" tabindex="-1"
@@ -206,8 +205,7 @@ $conn->close();
                                             <div class="modal-footer">
                                                 <form action="#" method="post" class="d-inline">
                                                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                                    <button class="btn btn-danger" type="submit"
-                                                        name="delete">Hapus</button>
+                                                    <button class="btn btn-danger" type="submit" name="delete">Hapus</button>
                                                 </form>
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
