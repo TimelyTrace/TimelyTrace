@@ -20,7 +20,7 @@
             <div class="d-flex align-items-center justify-content-start mt-3"
                 style="height: 50px; justify-content: center;">
                 <button class="toggle-btn" type="button">
-                    <img src="img/logo.svg" alt="logo" style="width: 50px;">
+                    <img src="img/logo.svg" alt="logo" style="width: 40px;">
                 </button>
                 <div class="sidebar-logo">
                     <a href="../loginpage/landingpage.html">TimelyTrace</a>
