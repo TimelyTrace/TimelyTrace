@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="../input/inputkelas.php" class="sidebar-link">
                         <i class="bi bi-people-fill"></i>
                         <span style="font-weight: 600;">Kelas</span>
                     </a>
